@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#3.0-beta1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>操作系统基本知识点 - 特特的天</title>
+  
+    <meta name="keywords" content="操作系统">
+  
+
+  
+    <meta name="description" content="————这里，有操作系统的一些基础知识点^_^————">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+      <img class='logo' src='https://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/welcome_here.png'/>
+    
+    
+      <p class="title">特特的天</p>
+    
+    
+      <p class="subtitle">While there is life there is hope</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="搜索" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-rss fa-fw'></i>主页
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/archives/"
+                
+                
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>博文
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/tags/"
+                
+                
+                id="tags">
+                <i class='fas fa-tags fa-fw'></i>标签
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            特特的天
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=https://tetedetian.github.io/
+                  
+                  
+                  
+                    id="https:tetedetiangithubio"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=https://tetedetian.github.io/
+                  
+                  
+                  
+                    id="https:tetedetiangithubio"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+  <div class="l_body nocover">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">操作系统基本知识点</div>
+  <div id="pjax-enable-cover">true</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
+  
+  
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover')[0].style.display = "none";
+    document.getElementsByClassName('l_body')[0].classList.add("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover')[0].classList.remove("full");
+      document.getElementsByClassName('cover')[0].classList.add("half");
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover')[0].classList.remove("half");
+      document.getElementsByClassName('cover')[0].classList.add("full");
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover')[0].style.display = "";
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+      
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">
+      操作系统基本知识点
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://tetedetian.github.io//" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
+    <p>特特的天</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Sep 6, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="leancloud_visitors" data-flag-title="操作系统基本知识点">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <div align="center">————这里，有操作系统的一些基础知识点^_^————</div>
+
+
+
+<a id="more"></a>
+
+
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>操作系统是什么：</strong></p>
+<p>操作系统（Operating System， OS） 是指控制和管理整个计算机系统的硬件和软件资源， 并合理地组织调度计算机的工作和资源的分配； 以提供给用户和其他软件方便的接口和环境； 它是计算机系统中最基本的系统软件。  </p>
+<h1 id="一、操作系统基本知识"><a href="#一、操作系统基本知识" class="headerlink" title="一、操作系统基本知识"></a>一、操作系统基本知识</h1><h2 id="1-1-操作系统特征"><a href="#1-1-操作系统特征" class="headerlink" title="1.1 操作系统特征"></a>1.1 操作系统特征</h2><p> <strong>并发性</strong></p>
+<p>指两个或多个事件在同一时间间隔内发生。 这些事件宏观上是同时发生的， 但微观上是交替发生的。常考易混概念——<u>并行</u>： 指两个或多个事件在同一时刻同时发生。  </p>
+<p>比如，单核CPU同一时刻只能执行一个程序，各个程序只能<strong>并发</strong>地执行。多核CPU同一时刻可以同时执行多个程序，多个程序可以<strong>并行</strong>地执行</p>
+<p><strong>共享性</strong></p>
+<p>共享即资源共享，是指系统中的资源可供内存中多个并发执行的进程共同使用。</p>
+<p>共享性和并发性联系密切。如果没有并发性，也就是没有并发需求，那么共享性就失去了意义。如果没有共享性，那么并发性也无法实现。</p>
+<p><strong>虚拟性</strong></p>
+<p>虚拟是指把一个物理上的实体变为若干个逻辑上的对应物。物理实体（前者）是实际存在的，而逻辑上 对应物（后者）是用户感受到的。</p>
+<p><strong>异步性</strong></p>
+<p>异步是指，在多道程序环境下，允许多个程序并发执行，但由于资源有限，进程的执行不是一贯到底的， 而是走走停停，以不可预知的速度向前推进，这就是进程的异步性。</p>
+<p>就好比如一个程序需要使用摄像头，但是另外一个程序也需要使用摄像头，但是因为摄像头已经被第一个程序使用了，第二个程序就要等待第一个程序使用完摄像头再使用。这就是异步。</p>
+<h2 id="1-2-OS的发展与分类"><a href="#1-2-OS的发展与分类" class="headerlink" title="1.2 OS的发展与分类"></a>1.2 OS的发展与分类</h2><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20201219151006528.png" alt="image-20201219151006528" style="zoom: 67%;" />
+
+<h2 id="1-3-OS的运行机制和体系结构"><a href="#1-3-OS的运行机制和体系结构" class="headerlink" title="1.3 OS的运行机制和体系结构"></a>1.3 OS的运行机制和体系结构</h2><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20201219161459552.png" alt="image-20201219161459552" style="zoom:67%;" />
+
+<h2 id="1-4-中断与异常"><a href="#1-4-中断与异常" class="headerlink" title="1.4 中断与异常"></a>1.4 中断与异常</h2><p><strong>中断的作用</strong>：“中断” 会使CPU由用户态变为内核态， 使操作系统重新夺回对CPU的控制权  。如果没有“中断” 机制， 那么一旦应用程序上CPU运行， CPU就会一直运行这个应用程序 。那么就实现不了并发。</p>
+<p><strong>内核态和用户态之间切换</strong>：</p>
+<p>内核态-&gt;用户态： 执行一条特权指令——修改PSW的标志位为“用户态” ， 这个动作意味着操作系统将主动让出CPU使用权<br>用户态-&gt;内核态： 由“中断” 引发， 硬件自动完成变态过程， 触发中断信号意味着操作系统将强行夺回CPU的使用权  </p>
+<p><strong>中断的分类</strong>：</p>
+<blockquote>
+<p>1.<strong>内中断</strong>：与当前执行的指令有关，中断信号来源于CPU内部  。例子：有时候应用程序想请求操作系统内核的服务， 此时会执行一条特殊的指令——陷入指令， 该指令会引发一个内部中断信号  </p>
+<p>2.<strong>外中断</strong>：与当前执行的指令无关，中断信号来源于CPU外部  例子：时钟中断——由时钟部件发来的中断信号  </p>
+</blockquote>
+<p><strong>异常</strong>：内中断一般称为“异常”  。狭义的中断， 是指外中断</p>
+<h2 id="1-5-系统调用"><a href="#1-5-系统调用" class="headerlink" title="1.5 系统调用"></a>1.5 系统调用</h2><p><strong>系统调用含义</strong>：“系统调用” 是操作系统提供给应用程序（程序员/编程人员） 使用的接口。可以理解为一种可供应用程序调用的特殊函数， 应用程序可以通过系统调用来请求获得操作系统内核的服务 。</p>
+<p><strong>作用</strong>：通过系统调用的方式向操作系统内核提出服务请求， 由操作系统内核代为完成。 这样可以保证系统的稳定性和安全性， 防止用户进行非法操作。  </p>
+<p>换个通俗点的说法，就是电脑会有很多应用程序，它们可能在同一段时间内对一个有限的系统资源有使用需求，就如这时候没有系统调用这个机制，那么它们就会争夺资源，导致十分混乱，任务无法正常执行。</p>
+<p><strong>系统调用过程</strong>：传入参数<strong>—&gt;</strong>执行陷入指令（也称为trap指令或者访管指令）(此时处于用户态)—&gt;由操作系统内核程序处理系统调用请求<strong>—&gt;</strong>返回应用程序</p>
+<h1 id="二、进程"><a href="#二、进程" class="headerlink" title="二、进程"></a>二、进程</h1><h2 id="2-1-进程的基本概念"><a href="#2-1-进程的基本概念" class="headerlink" title="2.1 进程的基本概念"></a>2.1 进程的基本概念</h2><p><strong>进程的概念</strong>：程序的一次执行过程  ，进程是资源分配的基本单位  。（同一个程序多次执行会对应多个进程  ）</p>
+<p><strong>进程和程序的区别</strong>：程序是静态的， 就是个存放在磁盘里的可执行文件， 就是一系列的指令集合。  进程（Process）是动态的， 是程序的一次执行过程  </p>
+<p><strong>进程的组成</strong>：</p>
+<blockquote>
+<p><strong>1.PCB（进程控制块）</strong>：包含着进程描述信息、进程控制和管理信息、资源分配清单、处理机相关信息。（PCB是进程存在的唯一标志， 当进程被创建时， 操作系统为其创建PCB， 当进程结束时， 会回收其PCB。）</p>
+<p><strong>2.程序段</strong>：程序的代码</p>
+<p><strong>3.数据段</strong>：运行过程中产生的各种数据（如程序的定义的变量）</p>
+</blockquote>
+<p><strong>进程的特征</strong>：</p>
+<blockquote>
+<p>1.<strong>动态性</strong>:进程是程序的一次执行过程，是动态地产生、变化和消亡的。(<strong>动态性是进程最基本的特征</strong>  )</p>
+<p>2.<strong>并发性</strong>：内存中有多个进程实体，各进程可以并发执行</p>
+<p>3.<strong>独立性</strong>：进程是能独立运行，独立获得资源、独立接受调度的基本单位</p>
+<p>4.<strong>异步性</strong>：各进程按各自独立的，不可预知的速度向前推进，操作系统要提供“进程同步机制”来解决异步的问题</p>
+<p>5.<strong>结构性</strong>:每个进程都会配置一个PCB。结构上，进程由程序段，数据段，PCB组成。</p>
+</blockquote>
+<h2 id="2-2-进程的状态及转换"><a href="#2-2-进程的状态及转换" class="headerlink" title="2.2 进程的状态及转换"></a>2.2 进程的状态及转换</h2><p><strong>进程的基本状态</strong>：</p>
+<blockquote>
+<p>1.<strong>运次态</strong>：占用CPU，并在CPU上运行</p>
+<p>2.<strong>就绪态</strong>：以及具备运行条件，但由于没有空闲的CPU，而暂时不能运行。</p>
+<p>3.<strong>阻塞态</strong>：因等待某一事件而暂时不能运行。（比如等待分配打印机、等待读磁盘操作的结果等。这是进程会暂时转换到阻塞态）</p>
+</blockquote>
+<p>（另外还有创建态：操作系统为新的进程分配资源，创建PCB。终止态：操作系统回收进程的资源，撤销PCB）</p>
+<p><strong>进程状态的转换</strong>：</p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20201221150654200.png" alt="image-20201221150654200" style="zoom: 50%;" />
+
+<h2 id="2-3-进程控制"><a href="#2-3-进程控制" class="headerlink" title="2.3 进程控制"></a>2.3 进程控制</h2><p><strong>作用</strong>：进程控制就是要实现进程状态转换  </p>
+<p><strong>如何实现进程控制</strong>：用原语实现进程的控制。（原语执行期间不允许中断）</p>
+<p><strong>控制原语要做的三类事情</strong>：</p>
+<ol>
+<li>更新PCB中的信息</li>
+<li>将PCB插入合适的队列</li>
+<li>分配/回收资源  </li>
+</ol>
+<p>比如进程切换原语需要做的事情：1.将运行环境信息存入PCB（为了下次恢复这个进程做准备）。2.PCB移入相应队列。3.选择另一个进程执行，并更新其PCB。4.根据PCB恢复新进程需要的运行环境。</p>
+<h2 id="2-4-进程通信"><a href="#2-4-进程通信" class="headerlink" title="2.4 进程通信"></a>2.4 进程通信</h2><p>1.<strong>共享存储</strong></p>
+<blockquote>
+<ul>
+<li><p>设置一个共享空间，两个进程需要互斥地访问共享空间。</p>
+</li>
+<li><p>两种方式：（1）基于数据结构。（2）基于存储区的共享</p>
+</li>
+</ul>
+</blockquote>
+<p>2.<strong>管道通信</strong></p>
+<blockquote>
+<ul>
+<li><p>设置一个特殊的共享文件（管道），其实就是一个缓冲区。</p>
+</li>
+<li><p>一个管道只能实现半双工通信。也就是一个管道只可以实现从一个方向写操作，在另一个方向读操作。各进程也要互斥访问管道。</p>
+</li>
+<li><p>管道写满时不能再写、读空时不能再读、没写满不能读、没读完不能写</p>
+</li>
+</ul>
+</blockquote>
+<p>3.<strong>消息传递</strong></p>
+<blockquote>
+<ul>
+<li>传递结构化的信息。</li>
+<li>两种方式：（1)直接通信方式：信息直接挂到接收方的消息队列。（2）间接通信方式：消息先发送到中间体（信箱）</li>
+</ul>
+</blockquote>
+<h1 id="三、线程"><a href="#三、线程" class="headerlink" title="三、线程"></a>三、线程</h1><h2 id="3-1-线程的基本概念"><a href="#3-1-线程的基本概念" class="headerlink" title="3.1 线程的基本概念"></a>3.1 线程的基本概念</h2><p>线程可以理解为轻量级进程。比如qq可以同时视频聊天，同时文字聊天，就是使用了线程并发。</p>
+<p><strong>为什么需要线程</strong>：</p>
+<p>为什么需要线程？我不可以多个进程并发吗。可以是可以，但是进程间的并发开销更大。前面有说过进程是资源分配的基本单位，也是CPU调度的基本单位，多进程的创建涉及到资源的分配，进程之间的切换也会需要保存、恢复运行环境等较大的开销。引入线程后，线程是CPU调度的基本单位，资源分配的基本单位依旧是进程。同一进程内的各个线程间并发， 不需要切换进程运行环境和内存地址空间，省时省力  </p>
+<p><strong>引入线程带来的变化</strong>：</p>
+<blockquote>
+<ul>
+<li>资源分配、调度的基本单位改变。</li>
+<li>线程间也可以并发，提高了并发度</li>
+<li>系统开销变小</li>
+</ul>
+</blockquote>
+<p><strong>多线程模型</strong>：</p>
+<blockquote>
+<p>1.<strong>多对一模型</strong>：</p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20201221191815244.png" alt="image-20201221191815244" style="zoom:50%;" />
+
+<p>优点：进程管理开销小，效率高。（因为线程切换在用户态就可以搞定）</p>
+<p>缺点：并发度低，假如一个线程被阻塞，整个进程都被阻塞</p>
+<p>2.<strong>一对一模型</strong>：</p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20201221192010506.png" alt="image-20201221192010506" style="zoom:67%;" />
+
+<p>优点：各线程可以分配到多核处理机中并行执行。（比如这幅图，就可以分配给三个处理机）</p>
+<p>缺点：进程管理开销大。（一个用户进程会占用多个内核级线程，线程切换由操作系统内核完成， 需要切换到<br>核心态， 因此线程管理的成本高， 开销大。  ）</p>
+<p>3.<strong>多对多模型</strong>：</p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20201221192512866.png" alt="image-20201221192512866" style="zoom:67%;" />
+
+<p>优点：集前两者的优点</p>
+<p>缺点：实现相对复杂</p>
+</blockquote>
+<h1 id="四-调度"><a href="#四-调度" class="headerlink" title="四.调度"></a>四.调度</h1><h2 id="4-1-进程调度"><a href="#4-1-进程调度" class="headerlink" title="4.1 进程调度"></a>4.1 进程调度</h2><p><strong>基本概念</strong>：按某种算法选择一个进程将处理机分配给它</p>
+<p><strong>三个层次</strong>：</p>
+<blockquote>
+<p>1.<strong>高级调度</strong>：从后备队列中选择合适的作业将其调入内存，并为其创建进程。</p>
+<p>2.<strong>中级调度</strong>：从挂起队列中选择合适的进程将其数据调回内存。</p>
+<p>3.<strong>低级调度</strong>：从就绪队列中选择一个进程为其分配处理机。</p>
+</blockquote>
+<p><strong>进程调度的一个重要知识点</strong>：进程的调度，切换是有代价的，并不是调度越频繁，并发度越高。</p>
+<h2 id="4-2-调度算法的评价指标"><a href="#4-2-调度算法的评价指标" class="headerlink" title="4.2 调度算法的评价指标"></a>4.2 调度算法的评价指标</h2><p><strong>（1）cpu利用率</strong></p>
+<p>利用率=忙碌的时间/总时间</p>
+<p><strong>（2）系统吞吐量</strong></p>
+<p>单位时间内完成的作业的数量</p>
+<p>系统吞吐量=完成作业的数量/完成作业的总时间</p>
+<p><strong>（3）周转时间</strong></p>
+<p>作业被提交给系统开始，到作业完成为止的这段时间间隔。</p>
+<p>带权周转时间：作业周转时间/作业实际运行的时间。</p>
+<p><strong>（4）等待时间</strong></p>
+<p>指进程/作业处于等待处理机状态时间之和，等待时间越长，用户满意度越低</p>
+<p><strong>（5）响应时间</strong></p>
+<p>从用户提交请求到首次产生响应所用的时间</p>
+<h2 id="4-3-几种调度算法"><a href="#4-3-几种调度算法" class="headerlink" title="4.3 几种调度算法"></a>4.3 几种调度算法</h2><p><strong>（1）FCFS</strong>（先来先服务，first come first serve）</p>
+<p>非抢占式算法</p>
+<p>类似我们生活中排队买东西，按照到达时间顺序来处理。属于非抢占式的算法。</p>
+<p>优点：公平、算法实现简单</p>
+<p>缺点：对于短作业不利。举个例子，排队买奶茶，如果你只需要买一杯奶茶，但是你前面的一位顾客需要买20杯奶茶。这时候，如果采用FCFS，那么你就要等前面那个人买完20杯奶茶才可以。所以，这种算法对短进程并不友好。</p>
+<p><strong>（2）SJF</strong>（短作业优先，shortest job first)</p>
+<p>非抢占式算法</p>
+<p>简单来说，就是如果同时有几个进程在等待处理机，那么使用处理机时间短的作业就会优先分配处理机。用回奶茶的例子就是，假如奶茶店先后来了三个人，分别买3,2,1杯奶茶，老板在选择时就会优先选择先做需要买1杯的那个人的。</p>
+<p>注意：一般来说，短作业优先算法也是非抢占式的，但是，也会有抢占式的短作业优先算法。就是会判断正在进行的作业剩余时间和正在等待的作业需要的时间哪个更短，更短的就会优先。比如你去买3杯奶茶，你的做好一杯后，来了个买1杯的，按照这个算法，老板就会暂时停止做你的奶茶，去做那个人的一杯奶茶。</p>
+<p>优点：可以降低总体的等待时间，对短作业友好</p>
+<p>缺点：对长作业不友好，长作业容易出现饥饿甚至”饿死”</p>
+<p><strong>（3）HRRN</strong>（高响应比优先，highest response ratio next）</p>
+<p>非抢占式算法</p>
+<p>这个算法，综合了前面两个算法的优点。采用了根据响应比来决定分配处理机的方法。</p>
+<p>响应比=（等待时间+要求服务时间）/要求服务时间。高响应的进程优先。这样的算法的好处在于，如果两个进程要求服务时间相等，那么等待时间长的进程响应比就会大，就会被优先分配，符合FCFS的优点。如果两个进程的等待时间相等，那么要求服务时间短的进程响应比就会大，就会优先分配，符合SJF的优点。</p>
+<p><strong>(4）时间片轮转</strong></p>
+<p>就是设定好单位时间片的时间，进程在处理机上执行一个时间片之后就会被强制抢夺处理机，这时候若进程还没处理完，就需要回到就绪队列重新排队，并且将进程剩余服务时间作为要求服务时间。</p>
+<p>优点：公平，响应快，适用于分时操作系统，不会导致饥饿。</p>
+<p>缺点：由于高频率的进程切换，因此有一定的开销；不区分任务的紧急程度。</p>
+<p><strong>（5）优先级调度算法</strong></p>
+<p>每个作业/进程有各自的优先级，按照优先级来调度。</p>
+<p>通常，系统进程优先级高于用户进程，前台进程优先级高于后台进程，操作系统更偏好I/O型进程。</p>
+<p>优点：可以用优先级区分紧急程度，重要程度，适用于实时操作系统。可以灵活地调整各进程。</p>
+<p>缺点：如果源源不断地有高优先级的进程到来，可能会导致饥饿。</p>
+<p><strong>（6）多级反馈队列</strong></p>
+<p>设置多级就绪队列，各级队列优先级从高到低，时间片从小到大。新进程到达时先进入第1级队列，若时间片用完进程还未结束，则进程进入下一级队列的队尾。只有第k级队列为空时，才会为k+1级队头的进程分配时间片用于进程调度。</p>
+<p>优点：结合了前面几种算法的优点</p>
+<p>缺点：可能会导致饥饿的</p>
+<h1 id="五、进程同步、进程互斥"><a href="#五、进程同步、进程互斥" class="headerlink" title="五、进程同步、进程互斥"></a>五、进程同步、进程互斥</h1><h2 id="5-1-基础概念"><a href="#5-1-基础概念" class="headerlink" title="5.1 基础概念"></a>5.1 基础概念</h2><p><strong>进程同步</strong>：并发性带来了异步性，有时候需要通过进程同步来解决这种异步问题。比如在管道通信中，写操作一定要在读操作之前，这就需要进程同步机制来调节。</p>
+<p><strong>进程互斥</strong>：对临界资源的访问，需要互斥地进行，同一时间段内只允许一个进程访问该资源。</p>
+<p>进程互斥需要遵循的原则：</p>
+<blockquote>
+<p>1.空闲让进：临界区空闲时，应允许一个进程访问。</p>
+<p>2.忙则等待：临界区正在被访问时，其他视图访问的进程需要等待。</p>
+<p>3.有限等待：要在有限时间内进入临界区，保证不会饥饿</p>
+<p>4.让权等待：进不了临界区的进程，要释放处理机，防止忙等。</p>
+</blockquote>
+<p>根据这四个原则，可以判断一个进程互斥方法是否可靠，可靠的方法需要满足这四个原则</p>
+<h2 id="5-2-进程互斥的软件实现方法"><a href="#5-2-进程互斥的软件实现方法" class="headerlink" title="5.2 进程互斥的软件实现方法"></a>5.2 进程互斥的软件实现方法</h2><p><strong>（1)单标志法</strong></p>
+<p>设置一个变量，假设为turn，用turn的值来决定允许进入临界区的进程。伪代码如下</p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210109143654057.png" alt="image-20210109143654057" style="zoom:80%;" />
+
+<p>存在问题：假如turn=0，说明P0进程被允许访问临界区，但是如果P0又一直不进入临界区，那么其他进程也无法访问临界区，因为谁能访问临界区需要靠P0进程的语句3来决定。也就是违反了“空闲让进”原则。</p>
+<p><strong>（2）双标志先检查法</strong></p>
+<p>设置一个数组，里面存着各个进程的标志值，1代表想进入临界区，0代表不想进入。一个进程想进入临界区之前，会想检查其他进程的标志值是否全为0，全是0的情况先，进程才会申请修改自己的标志位为1，来表示自己想进入临界区的意愿。</p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210109144410881.png" alt="image-20210109144410881" style="zoom:80%;" />
+
+<p>存在问题：因为进程是并发执行的，有可能出现大家都为0的情况下，然后两个进程都认为别人是0，然后修改了自己的标志位为1，同时访问了临界区，违背了最主要的“忙则等待”原则。</p>
+<p><strong>（3）双标志后检查法</strong></p>
+<p>和上面的类似，只是这个会先标志自己想进入临界区，再检查其他进程是否需要进入临界区。</p>
+<p>问题也很明显，可能两个进程都把自己的标志位改了，然后检查的时候都发现有别的进程标志位为1，因此就在不断等待。违背“空闲让进”和“有限等待”原则。</p>
+<p>上面的几种方法，都没有完全满足四个原则，因此并不是合格的进程互斥实现方法。</p>
+<p><strong>（4）peterson 算法</strong></p>
+<img src="C:\Users\10240\AppData\Roaming\Typora\typora-user-images\image-20210109221832692.png" alt="image-20210109221832692" style="zoom: 50%;" />
+
+
+
+<h2 id="5-3-进程互斥的硬件实现方法"><a href="#5-3-进程互斥的硬件实现方法" class="headerlink" title="5.3 进程互斥的硬件实现方法"></a>5.3 进程互斥的硬件实现方法</h2><p><strong>(1)中断屏蔽方法</strong></p>
+<p><strong>简述</strong>：利用“开/关中断指令” 实现 。也就是在进程运行的时候直接把中断关了，那么就不会发生中断，自然不会发生进程的切换。</p>
+<p><strong>优点：</strong>简单，高效。</p>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>不适用于多处理机。因为开关中断是对于一个处理机来说的，比如处理机A关中断，那么处理机B是不会关中断的，所以这时候B处理机的进程仍然可能访问那个临界区，导致两个进程同时访问临界区。</li>
+<li>只适用于操作系统内核进程，不适用于用户进程。因为开关中断只能运行在内核态。</li>
+</ul>
+<p><strong>（2）TestAndSet指令</strong></p>
+<p><strong>优点：</strong> 实现简单， 无需像软件实现方法那样严格检查是否会有逻辑漏洞； 适用于多处理机环境<br><strong>缺点：</strong> 不满足“让权等待” 原则， 暂时无法进入临界区的进程会占用CPU并循环执行TSL指令， 从而导致“忙等” 。  </p>
+<p><strong>(3)Swap指令</strong></p>
+<p>优缺点与TestAndSet指令一样</p>
+<h2 id="5-4-信号量机制"><a href="#5-4-信号量机制" class="headerlink" title="5.4 信号量机制"></a>5.4 信号量机制</h2><p>在前面的两小节，进程互斥的软硬件实现方法中，我们发现有下面两个问题。</p>
+<blockquote>
+<p>1.在双标志先检查法中， 进入区的“检查” 、 “上锁” 操作无法一气呵成， 从而导致了两<br>个进程有可能同时进入临界区的问题。</p>
+<p>2.所有的解决方案都无法实现“让权等待” 。 </p>
+</blockquote>
+<p>信号量机制就是用来可以同时解决上述两个问题的方法。</p>
+<p><strong>含义简述</strong>：用户进程可以通过使用操作系统提供的<u>一对原语</u>来对<u>信号量</u>进行操作， 从而很方便的实现了进程互斥、 进程同步。  </p>
+<p>信号量其实就是一个变量，可以是一个整数，也可以是一个更加复杂的记录型变量。原语有两个：wait（S）和signal（S）原语（也简称P，V操作）。</p>
+<p>根据信号量的类型，下面分为两小点。</p>
+<h3 id="5-4-1-整型信号量"><a href="#5-4-1-整型信号量" class="headerlink" title="5.4.1 整型信号量"></a>5.4.1 整型信号量</h3><p>用一个整数型的变量作为信号量， 用来表示系统中某种资源的数量，比如打印机资源就可以用整型信号量，因为打印机是一台台的。</p>
+<p>例子：某计算机系统中有一台打印机…  </p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210206231536900.png" alt="image-20210206231536900" style="zoom:50%;" />
+
+<p>从上面就可以看到，信号量S就设置为1，代表打印机资源的数量。两个原语的定义如上，其实wait原语就是检查打印机资源S是否小于等于0，如果是，代表现在没有打印机可用，同时while循环就会一直执行，也就是p0进程中wait（S）这一步会卡住，P0无法使用打印机。假如S不为0，while循环就不会一直执行，就下来wait原语将S-1，代表打印机资源减少一个。</p>
+<p><strong>缺陷</strong>：不满足“让权等待”原则， 会发生“忙等”  。例如打印机资源为0的时候，有一个进程占用了处理机，但是它又一直在检查打印机资源，只要没分配到打印机资源，它就会一直等待，造成“忙等”</p>
+<h3 id="5-4-2-记录型信号量"><a href="#5-4-2-记录型信号量" class="headerlink" title="5.4.2 记录型信号量"></a>5.4.2 记录型信号量</h3><p><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210207165059357.png" alt="image-20210207165059357"></p>
+<p>记录型信号量最大的变化就是，会检查资源的数量，如果数量不足，就会把进程切换到阻塞态（利用block原语）。当其他进程使用完资源之后，也会检查是否还有别的进程在等待这个资源，有的话就会使用wakeup原语唤醒等待队列中的一个进程（看上面例子，如果S.value&lt;=0,就代表还有其他进程在等待，不然肯定资源数是&gt;0的）。</p>
+<p><strong>优点</strong>：符合“让权等待”。因为资源用完的时候进程会被切换到阻塞态，不会一直占用着处理机。</p>
+<h2 id="5-5-信号量机制实现进程互斥、同步"><a href="#5-5-信号量机制实现进程互斥、同步" class="headerlink" title="5.5 信号量机制实现进程互斥、同步"></a>5.5 信号量机制实现进程互斥、同步</h2><p><strong>（1）进程互斥</strong></p>
+<p>根据上面信号量机制的原理，其实只要把临界区当做一种资源，资源的信号量设置为1即可，处理方法和上面所述一样原理。</p>
+<p><strong>（2）进程同步</strong></p>
+<p>并发性带来了异步性，有时候需要通过进程同步来解决这种异步问题。看下面这个例子</p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210207182158663.png" alt="image-20210207182158663" style="zoom:50%;" />
+
+<p>假如代码4的运行一定要基于代码1和代码2的运行结果，但是由于并发性，如果没有什么同步机制的情况下，处理机就有可能先执行代码4，之后再轮到代码1和2，这个时候自然就会出错。那么如何利用信号量来实现这个操作呢。</p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210207182629801.png" alt="image-20210207182629801" style="zoom:80%;" />
+
+<p>如上图，将信号量初始值设置为0。在需要先执行的代码块后面添加V操作，后执行的代码块前面添加P操作。这样只要没有执行完代码1和2，就不会执行V操作，也就是信号量会&lt;=0，导致P操作会卡住。</p>
+<p><strong>（3）信号量机制实现前驱关系</strong></p>
+<p>前驱关系其实就是同步的问题。假如现在有这么一个问题：进程 P1 中有句代码 S1， P2 中有句代码 S2 ， P3中有句代码S3 …… P6 中有句代码 S6。 这些代码要求按如下前驱图所示的顺序来执行：  </p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210208150831144.png" alt="image-20210208150831144" style="zoom: 50%;" />
+
+<p>那么应该怎么处理呢。其实，只要在每前后两个进程之间设置一个信号量即可控制。这种前后两个进程的关系也称作前驱关系。</p>
+<p>每一对前驱关系都是一个进程同步问题（需要保证一前一后的操作）<br>因此需要做的工作就是</p>
+<blockquote>
+<p>1.要为每一对前驱关系各设置一个同步信号量</p>
+<p>2.在“前操作” 之后对相应的同步信号量执行 V 操作</p>
+<p>3.在“后操作” 之前对相应的同步信号量执行 P 操作  </p>
+</blockquote>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210208151359186.png" alt="image-20210208151359186" style="zoom:50%;" />
+
+<h2 id="5-6-生产者-消费者问题"><a href="#5-6-生产者-消费者问题" class="headerlink" title="5.6 生产者-消费者问题"></a>5.6 生产者-消费者问题</h2><p><strong>问题描述</strong>：</p>
+<p>系统中有一组生产者进程和一组消费者进程， 生产者进程每次生产一个产品放入缓冲区， 消费者进程每次从缓冲区中取出一个产品并使用，（注： 这里的“产品” 理解为某种数据。生产者、 消费者共享一个初始为空、 大小为n的缓冲区。</p>
+<p>那么，根据前vp后的原则，图解如下</p>
+<img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210209132836864.png" alt="image-20210209132836864" style="zoom:67%;" />
+
+
+
+<h2 id="5-7-管程"><a href="#5-7-管程" class="headerlink" title="5.7 管程"></a>5.7 管程</h2><p>根据上面信号量机制的知识可以知道，信号量机制存在的问题： 编写程序困难、 易出错 。因此就有人引入了管程。引入管程的目的是更方便地实现进程互斥和同步 。</p>
+<p>管程的基本特征：</p>
+<blockquote>
+<p>\1. 局部于管程的数据只能被局部于管程的过程所访问；<br>\2. 一个进程只有通过调用管程内的过程才能进入管程访问共享数据；<br>\3. 每次仅允许一个进程在管程内执行某个内部过程。  </p>
+</blockquote>
+<p>其实，就类似于C++里面的类，体现的是一种封装的思想。</p>
+<h1 id="六、死锁"><a href="#六、死锁" class="headerlink" title="六、死锁"></a>六、死锁</h1><h2 id="6-1-死锁产生的必要条件"><a href="#6-1-死锁产生的必要条件" class="headerlink" title="6.1 死锁产生的必要条件"></a>6.1 死锁产生的必要条件</h2><p>死锁产生的必要条件：</p>
+<blockquote>
+<p>1.<strong>互斥条件</strong>：就是某个资源只能被互斥地使用</p>
+<p>2.<strong>不可剥夺条件</strong>：进程所获得的资源在未使用完之前，不能由其他进程强行夺走，只能主动释放。</p>
+<p>3.<strong>请求和保持条件</strong>：进程已经保持至少一个资源，但又提出新的资源请求，而该资源又被其他进程占有。</p>
+<p>4.<strong>循环等待条件</strong>：存在一种进程资源的循环等待链。</p>
+</blockquote>
+<h2 id="6-2-预防死锁的方法"><a href="#6-2-预防死锁的方法" class="headerlink" title="6.2 预防死锁的方法"></a>6.2 预防死锁的方法</h2><p>预防死锁，可以通过破坏四个必要条件的其中一个来实现，下面简述下方法以及缺点。</p>
+<p><strong>1.破坏互斥条件</strong></p>
+<p>将临界资源改造为可共享使用的资源。比如弄个队列把需要用到临界资源的进程排队。</p>
+<p>缺点：可行性不高，在某些情况下必须保持临界资源的互斥性</p>
+<p><strong>2.破坏不可剥夺条件</strong></p>
+<ul>
+<li>申请的资源得不到满足时，立即释放拥有的所有资源。</li>
+<li>由操作系统协助剥夺（考虑优先级）</li>
+</ul>
+<p>缺点：实现复杂，剥夺资源可能导致部分工作实效。反复申请导致系统开销大；可能导致饥饿</p>
+<p><strong>3.破坏请求和保持条件</strong></p>
+<p>运行前分配好所有需要的资源，之后一直保持。</p>
+<p>缺点：有些资源可能某个进程只需要使用很短时间，但是却在整个过程占用，资源利用率低；可能导致饥饿</p>
+<p><strong>4.破坏循环等待条件</strong></p>
+<p>给资源编号，必须按照编号从小到大的顺序申请资源。</p>
+<p>缺点：用户编程麻烦；如果5号是打印机，7号是摄像头，进程就必须先申请5号，但是如果进程需要先使用摄像头很长一段时间再使用打印机，就会导致资源浪费。</p>
+<h2 id="6-3-避免死锁的方法"><a href="#6-3-避免死锁的方法" class="headerlink" title="6.3 避免死锁的方法"></a>6.3 避免死锁的方法</h2><p>通过特定的算法，避免系统进入不安全状态。</p>
+<p>首先需要了解几个概念：</p>
+<p><strong>安全序列</strong>：所谓安全序列， 就是指如果系统按照这种序列分配资源， 则每个进程都能顺利完成。</p>
+<p><strong>安全状态：</strong>只要能找出一个安全序列，系统就是安全状态。 当然， 安全序列可能有多个。</p>
+<p><strong>不安全状态：</strong>如果分配了资源之后，系统中找不出任何一个安全序列， 系统就进入了不安全状态。</p>
+<p> 如果系统处于安全状态， 就一定不会发生死锁。 如果系统进入不安全状态， 就可能发生死锁（处于不安全状态未必就是发生了死锁， 但发生死锁时一定是在不安全状态）  </p>
+<p><strong>避免系统进入不安全状态的算法：</strong>银行家算法</p>
+<p><strong>数据结构：</strong><br>长度为 m 的一维数组 Available 表示还有多少可用资源<br>n<em>m 矩阵 Max 表示各进程对资源的最大需求数<br>n</em>m 矩阵 Allocation 表示已经给各进程分配了多少资源<br>Max – Allocation = Need 矩阵表示各进程最多还需要多少资源<br>用长度为 m 的一位数组 Request 表示进程此次申请的各种资源数</p>
+<p><strong>银行家算法步骤：</strong><br>①检查此次申请是否超过了之前声明的最大需求数<br>②检查此时系统剩余的可用资源是否还能满足这次请求<br>③试探着分配， 更改各数据结构<br>④用安全性算法检查此次分配是否会导致系统进入不安全状态</p>
+<p><strong>安全性算法步骤：</strong><br>检查当前的剩余可用资源是否能满足某个进程的最大需求， 如果可以， 就把该进程加入安全序列，<br>并把该进程持有的资源全部回收。<br>不断重复上述过程， 看最终是否能让所有进程都加入安全序列。  </p>
+<h1 id="七、内存"><a href="#七、内存" class="headerlink" title="七、内存"></a>七、内存</h1><h2 id="1-一些简单概念"><a href="#1-一些简单概念" class="headerlink" title="1.一些简单概念"></a>1.一些简单概念</h2><p><strong>内存是什么</strong>：内存是用于存放数据的硬件，被划分为一个一个存储单元。程序执行前需要先放到内存中才能被CPU处理。（因为CPU处理速度快，直接读取外存的话读取速度跟不上处理速度）</p>
+<p><strong>4GB内存：</strong>1GB=2^10MB=2^20KB=2^30B，所以4GB为2^32B，所以需要2^32个存储单元，也就是要32位二进制才可以全部表示。因此，32位的操作系统最大支持4GB内存。</p>
+<h2 id="2-页面置换算法"><a href="#2-页面置换算法" class="headerlink" title="2.页面置换算法"></a>2.页面置换算法</h2><p><strong>（1）最佳置换算法——OPT</strong></p>
+<p>这个算法无法实现。</p>
+<p><strong>思想</strong>：假如知道进程接下来访问的页面，就可以知道哪个页面最后才被访问到，就把最后才会被访问的页面置换成新访问的页面。</p>
+<p><strong>无法实现原因</strong>：因为需要“预知未来”，需要知道进程接下来会访问到的页面才行。</p>
+<p><strong>（2）先进先出置换算法——FIFO</strong></p>
+<p><strong>思想</strong>：每次淘汰的是最早进入内存的页面</p>
+<p><strong>实现方法</strong>：把调入内存的页面根据进入的顺序排成一个队列，每次淘汰队头就可以</p>
+<p><strong>缺点</strong>：算法性能差，无法体现页面冷热信息（就是被使用的频繁度）</p>
+<p><strong>（3）最近最久未使用置换算法——LRU</strong></p>
+<p><strong>思想</strong>：每次淘汰的页面是最近这段时间内最久未使用的页面。也就是从开始需要置换的地方开始往回检查，最迟出现的页面就是“最近最久未使用置换算法“</p>
+<p><strong>实现方法</strong>：</p>
+<blockquote>
+<p>方法1：使用一个栈，新页面或者被使用的页面，就移动到栈底，每次替换栈顶的缓存页面。</p>
+<p>方法2：赋予每个页面对用的页表项中，用访问字段记录该页面自上次被访问以来所经历的时间t。当需要淘汰一个页面的时候，选择t最大的页面即可。</p>
+</blockquote>
+<p>前面的三种算法，OPT性能最好，但是无法实现。FIFO实现最简单，但是算法性能差。LRU算法性能好，但是实现起来不容易，开销比较大。所以，需要一个比较均衡的算法——clock</p>
+<p><strong>（3）时钟置换算法——clock</strong></p>
+<p><strong>思想</strong>：为每个在内存里的页面设置一个访问位，访问位有1和0两种情况，1代表最近访问过，0代表最近没访问过。再将内存中的页面都通过链接指针链接成一个循环队列。接下来就是操作：新加入的页面访问位都置为1。被访问的页面也置为1。当需要置换的时候，就开始循环扫描，如果页面访问位是0，说明少用，被置换。是1的话说明最近使用过，不被置换，但是访问位变0。</p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://tetedetian.github.io/2020/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/>https://tetedetian.github.io/2020/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-10T13:56:07+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Apr 10, 2021</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>操作系统</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://tetedetian.github.io/2020/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/&title=操作系统基本知识点 - 特特的天&summary=————这里，有操作系统的一些基础知识点^_^————"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tetedetian.github.io/2020/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/&title=操作系统基本知识点 - 特特的天&summary=————这里，有操作系统的一些基础知识点^_^————"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://tetedetian.github.io/2020/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/&title=操作系统基本知识点 - 特特的天&summary=————这里，有操作系统的一些基础知识点^_^————"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/09/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数据结构与算法题解</p>
+                <p class='content'>
+
+——这记录了一些leetcode的高频考题以及题解，还有一些我对答案额外的解释——
+
+
+
+
+
+
+
+一、字符串1.无重复字符的最长子字符串题目：给定一个字符串，请你找出其中不含有重复字符的 最...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/09/06/yilia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/'>
+                <p class='title'>yilia主题使用方法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>这里，有yilia主题的配置方法及一些问题的解决方法，希望对你有帮助^_^
+
+我已经改为使用Volantis X主题啦
+
+
+
+
+
+
+
+置顶文章、文章阅读数统计、鼠标点击小红心的设置以及一些其他的...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一、操作系统基本知识"><span class="toc-text">一、操作系统基本知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-操作系统特征"><span class="toc-text">1.1 操作系统特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-OS的发展与分类"><span class="toc-text">1.2 OS的发展与分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-OS的运行机制和体系结构"><span class="toc-text">1.3 OS的运行机制和体系结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-中断与异常"><span class="toc-text">1.4 中断与异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-系统调用"><span class="toc-text">1.5 系统调用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、进程"><span class="toc-text">二、进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-进程的基本概念"><span class="toc-text">2.1 进程的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-进程的状态及转换"><span class="toc-text">2.2 进程的状态及转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-进程控制"><span class="toc-text">2.3 进程控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-进程通信"><span class="toc-text">2.4 进程通信</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、线程"><span class="toc-text">三、线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-线程的基本概念"><span class="toc-text">3.1 线程的基本概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-调度"><span class="toc-text">四.调度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-进程调度"><span class="toc-text">4.1 进程调度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-调度算法的评价指标"><span class="toc-text">4.2 调度算法的评价指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-几种调度算法"><span class="toc-text">4.3 几种调度算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、进程同步、进程互斥"><span class="toc-text">五、进程同步、进程互斥</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-基础概念"><span class="toc-text">5.1 基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-进程互斥的软件实现方法"><span class="toc-text">5.2 进程互斥的软件实现方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-进程互斥的硬件实现方法"><span class="toc-text">5.3 进程互斥的硬件实现方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-信号量机制"><span class="toc-text">5.4 信号量机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-1-整型信号量"><span class="toc-text">5.4.1 整型信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-2-记录型信号量"><span class="toc-text">5.4.2 记录型信号量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-信号量机制实现进程互斥、同步"><span class="toc-text">5.5 信号量机制实现进程互斥、同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6-生产者-消费者问题"><span class="toc-text">5.6 生产者-消费者问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-7-管程"><span class="toc-text">5.7 管程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、死锁"><span class="toc-text">六、死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-死锁产生的必要条件"><span class="toc-text">6.1 死锁产生的必要条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-预防死锁的方法"><span class="toc-text">6.2 预防死锁的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-避免死锁的方法"><span class="toc-text">6.3 避免死锁的方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、内存"><span class="toc-text">七、内存</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-一些简单概念"><span class="toc-text">1.一些简单概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-页面置换算法"><span class="toc-text">2.页面置换算法</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='5131789159'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xaoxuu.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/xaoxuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        Use
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        as theme, total visits
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/35F12181-F0E9-45BD-B134-37E4B4A660CF.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+<!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    var valinePath = $.trim($('#valine-path').text()) === "none" ?
+            window.location.pathname : $.trim($('#valine-path').text());
+
+    var valinePlaceholder = $.trim($('#valine-placeholder').text()) === "none" ?
+            "快来评论吧~" : $.trim($('#valine-placeholder').text());
+
+    var ALLPATH = '';
+    if(ALLPATH != '') valinePath = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: valinePlaceholder,
+      path: valinePath,
+      appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+      appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '32px',
+        duration: '800',
+        interval: '20',
+        scale: '1',
+        easing: 'ease-out'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+      var currentUrl = window.location.pathname;
+      var targetUrl = e.triggerElement.href;
+      var banUrl = [""];
+      if (banUrl[0] != "") {
+        banUrl.forEach(item => {
+          if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+            window.location.href = targetUrl;
+          }
+        });
+      }
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
+      $('.menu-phone.list-v').css("display","none"); // 移除小尾巴
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      $('.s-top').unbind('click');   // 解绑
+      $('.menu a').unbind('click');  // 解绑
+      $(window).unbind('resize');    // 解绑
+      $(window).unbind('scroll');    // 解绑
+      $(document).unbind('scroll');  // 解绑
+      $(document).unbind('click');   // 解绑
+      $('body').unbind('click');     // 解绑
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('') {
+            $('').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>

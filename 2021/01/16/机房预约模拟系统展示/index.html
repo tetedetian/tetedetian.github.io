@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#3.0-beta1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>机房预约系统模拟展示 - 特特的天</title>
+  
+    <meta name="keywords" content="c++">
+  
+
+  
+    <meta name="description" content=" 此博客展示了一个基于C++控制台的机房预约模拟系统的代码以及运行结果 ">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+      <img class='logo' src='https://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/welcome_here.png'/>
+    
+    
+      <p class="title">特特的天</p>
+    
+    
+      <p class="subtitle">While there is life there is hope</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="搜索" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-rss fa-fw'></i>主页
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/archives/"
+                
+                
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>博文
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/tags/"
+                
+                
+                id="tags">
+                <i class='fas fa-tags fa-fw'></i>标签
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            特特的天
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=https://tetedetian.github.io/
+                  
+                  
+                  
+                    id="https:tetedetiangithubio"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=https://tetedetian.github.io/
+                  
+                  
+                  
+                    id="https:tetedetiangithubio"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+  <div class="l_body nocover">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">机房预约系统模拟展示</div>
+  <div id="pjax-enable-cover">true</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
+  
+  
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover')[0].style.display = "none";
+    document.getElementsByClassName('l_body')[0].classList.add("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover')[0].classList.remove("full");
+      document.getElementsByClassName('cover')[0].classList.add("half");
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover')[0].classList.remove("half");
+      document.getElementsByClassName('cover')[0].classList.add("full");
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover')[0].style.display = "";
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+      
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2021/01/16/%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%B1%95%E7%A4%BA/">
+      机房预约系统模拟展示
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://tetedetian.github.io//" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
+    <p>特特的天</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 16, 2021</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2021/01/16/%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%B1%95%E7%A4%BA/" class="leancloud_visitors" data-flag-title="机房预约系统模拟展示">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2021/01/16/%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%B1%95%E7%A4%BA/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2021/01/16/%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%B1%95%E7%A4%BA/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <div align="center"> 此博客展示了一个基于C++控制台的机房预约模拟系统的代码以及运行结果 <div/>
+
+
+
+<a id="more"></a>
+
+
+
+<h1 id="一、头文件"><a href="#一、头文件" class="headerlink" title="一、头文件"></a>一、头文件</h1><p><strong>1.computer.h</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**********</span></span><br><span class="line"><span class="comment">不止一个机房，所以这个头文件是声明一个机房类，可供定义机房对象时使用</span></span><br><span class="line"><span class="comment">**********/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//机房类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComputerRoom</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> m_ComId; <span class="comment">//机房Id号</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> m_MaxNum; <span class="comment">//机房最大容量</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.globalFile.h</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**********</span></span><br><span class="line"><span class="comment">对存储数据的文本文件进行宏定义，方便其他文件调用</span></span><br><span class="line"><span class="comment">**********/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//管理员信息文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ADMIN_FILE     <span class="meta-string">"admin.txt"</span></span></span><br><span class="line"><span class="comment">//学生信息文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> STUDENT_FILE   <span class="meta-string">"student.txt"</span></span></span><br><span class="line"><span class="comment">//教师信息文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TEACHER_FILE   <span class="meta-string">"teacher.txt"</span></span></span><br><span class="line"><span class="comment">//机房信息文件（机器数量，机房号等）</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> COMPUTER_FILE  <span class="meta-string">"computerRoom.txt"</span></span></span><br><span class="line"><span class="comment">//预约信息文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ORDER_FILE     <span class="meta-string">"order.txt"</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>3.Identity.h</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**********</span></span><br><span class="line"><span class="comment">这个头文件定义了一个身份父类，声明了一些身份认证必须的成员变量和方法，可供管理员、教师、学生类继承。</span></span><br><span class="line"><span class="comment">**********/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once <span class="comment">//防止头文件重复包含</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//身份抽象父类（基类）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Identity</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="comment">//操作菜单，用到了纯虚函数。（virtual是虚函数标志，“=0”则表示是纯虚函数）</span></span><br><span class="line">	<span class="comment">//如果父类中有纯虚函数，子类继承父类，就必须实现纯虚函数</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">operMenu</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//用户名</span></span><br><span class="line">	<span class="built_in">string</span> m_Name;</span><br><span class="line">	<span class="comment">//密码</span></span><br><span class="line">	<span class="built_in">string</span> m_Pwd;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.manager.h</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**********</span></span><br><span class="line"><span class="comment">声明管理员类</span></span><br><span class="line"><span class="comment">**********/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Identity.h"</span><span class="comment">//管理员也要身份认证，肯定得用到身份类</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;//写入txt文件需要用到的一个头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"globalFile.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;//vertor容器头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"student.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"teacher.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;//&lt;algorithm&gt;是所有STL头文件中最大的一个，范围涉及到比较、 交换、查找、遍历操作、复制、修改等等</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"computerRoom.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//管理员类设计</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Manager</span> :</span><span class="keyword">public</span> Identity</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="comment">//默认构造</span></span><br><span class="line">	Manager();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//有参构造</span></span><br><span class="line">	Manager(<span class="built_in">string</span> name ,<span class="built_in">string</span> pwd);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//菜单界面</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">operMenu</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//添加账号</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">addPerson</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//查看账号</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">showPerson</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//查看机房信息</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">showComputer</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//清空预约记录</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">cleanFile</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//初始化容器</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">initVector</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//检测重复 参数1:检测学号/职工号  参数2:检测类型</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">checkRepeat</span><span class="params">(<span class="keyword">int</span> id , <span class="keyword">int</span> type)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//学生容器</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;Student&gt;vStu;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//教师容器</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;Teacher&gt;vTea;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//机房信息容器</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;ComputerRoom&gt;vCom;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>5.orderFile.h</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**********</span></span><br><span class="line"><span class="comment">声明预约类</span></span><br><span class="line"><span class="comment">**********/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"globalFile.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;//对txt文件读写需要用到</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;//map容器头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OrderFile</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="comment">//构造函数</span></span><br><span class="line">	OrderFile();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//更新预约记录</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">updateOrder</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//记录预约条数</span></span><br><span class="line">	<span class="keyword">int</span> m_Size;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//记录所有预约信息的容器(map容器)  key记录条数   value 具体记录键值对信息</span></span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;&gt; m_orderData;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>6.student.h</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Identity.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"computerRoom.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"globalFile.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"orderFile.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//学生类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> :</span> <span class="keyword">public</span> Identity</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="comment">//默认构造</span></span><br><span class="line">	Student();</span><br><span class="line">	<span class="comment">//有参构造  参数：学号、姓名、密码</span></span><br><span class="line">	Student(<span class="keyword">int</span> id,<span class="built_in">string</span> name,<span class="built_in">string</span> pwd);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//菜单界面</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">operMenu</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//申请预约</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">applyOrder</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//查看自身预约</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">showMyOrder</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//查看所有预约</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">showAllOrder</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//取消预约</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">cancelOrder</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//学生学号</span></span><br><span class="line">	<span class="keyword">int</span> m_Id;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//机房容器</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;ComputerRoom&gt; vCom;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>7.teacher.h</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Identity.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"orderFile.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//教师类设计</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span> :</span><span class="keyword">public</span> Identity</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//默认构造</span></span><br><span class="line">	Teacher();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//有参构造</span></span><br><span class="line">	Teacher(<span class="keyword">int</span> empId, <span class="built_in">string</span> name, <span class="built_in">string</span> pwd);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//菜单界面</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">operMenu</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//查看所有预约</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">showAllOrder</span><span class="params">()</span></span>;</span><br><span class="line">		</span><br><span class="line">	<span class="comment">//审核预约</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">validOrder</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//职工号</span></span><br><span class="line">	<span class="keyword">int</span> m_EmpId;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="二、源文件"><a href="#二、源文件" class="headerlink" title="二、源文件"></a>二、源文件</h1><p><strong>1.manager.cpp</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"manager.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//默认构造</span></span><br><span class="line">Manager::Manager()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//有参构造</span></span><br><span class="line">Manager::Manager(<span class="built_in">string</span> name, <span class="built_in">string</span> pwd)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//初始化管理员信息</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Name = name;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Pwd = pwd;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//初始化容器 获取到所有文件中 学生、老师信息</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;initVector();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//初始化机房信息</span></span><br><span class="line">	ifstream ifs;</span><br><span class="line">	ifs.<span class="built_in">open</span>(COMPUTER_FILE, ios::in);</span><br><span class="line"></span><br><span class="line">	ComputerRoom com;</span><br><span class="line">	<span class="keyword">while</span> (ifs &gt;&gt; com.m_ComId &amp;&amp; ifs &gt;&gt; com.m_MaxNum)</span><br><span class="line">	&#123;</span><br><span class="line">		vCom.push_back(com);</span><br><span class="line">	&#125;</span><br><span class="line">	ifs.<span class="built_in">close</span>();</span><br><span class="line">	<span class="comment">//cout &lt;&lt; "机房的数量为：" &lt;&lt; vCom.size() &lt;&lt; endl;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//菜单界面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Manager::operMenu</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"欢迎管理员："</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Name &lt;&lt; <span class="string">"登录！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t ---------------------------------\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          1.添加账号            |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          2.查看账号            |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          3.查看机房            |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          4.清空预约            |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          0.注销登录            |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t ---------------------------------\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请选择您的操作： "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加账号</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Manager::addPerson</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入添加账号类型"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"1、添加学生"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"2、添加老师"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">string</span> fileName; <span class="comment">//操作文件名</span></span><br><span class="line">	<span class="built_in">string</span> tip;  <span class="comment">//提示id号</span></span><br><span class="line">	<span class="built_in">string</span> errorTip; <span class="comment">//重复错误提示</span></span><br><span class="line"></span><br><span class="line">	ofstream ofs;<span class="comment">//文件操作对象</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> select = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; select; <span class="comment">//接受用户的选项</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (select == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//添加的是学生</span></span><br><span class="line">		fileName = STUDENT_FILE;</span><br><span class="line">		tip = <span class="string">"请输入学号："</span>;</span><br><span class="line">		errorTip = <span class="string">"学号重复，请重新输入"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		fileName = TEACHER_FILE;</span><br><span class="line">		tip = <span class="string">"请输入职工编号："</span>;</span><br><span class="line">		errorTip = <span class="string">"职工号重复，请重新输入"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//利用追加的方式 写文件</span></span><br><span class="line">	ofs.<span class="built_in">open</span>(fileName, ios::out | ios::app);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> id; <span class="comment">//学号 /职工号</span></span><br><span class="line">	<span class="built_in">string</span> name; <span class="comment">//姓名</span></span><br><span class="line">	<span class="built_in">string</span> pwd; <span class="comment">//密码</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; tip &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">		<span class="keyword">bool</span> ret = checkRepeat(id, select);</span><br><span class="line">		<span class="keyword">if</span> (ret) <span class="comment">//有重复</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; errorTip &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入姓名： "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入密码： "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; pwd;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//向文件中添加数据</span></span><br><span class="line">	ofs &lt;&lt; id &lt;&lt; <span class="string">" "</span> &lt;&lt; name &lt;&lt; <span class="string">" "</span> &lt;&lt; pwd &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"添加成功"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line"></span><br><span class="line">	ofs.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//调用初始化容器接口，从新获取文件中的数据</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;initVector();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStudent</span><span class="params">(Student &amp; s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"学号： "</span> &lt;&lt; s.m_Id &lt;&lt; <span class="string">" 姓名： "</span> &lt;&lt; s.m_Name &lt;&lt; <span class="string">" 密码："</span> &lt;&lt; s.m_Pwd &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printTeacher</span><span class="params">(Teacher &amp; s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"职工号： "</span> &lt;&lt; s.m_EmpId &lt;&lt; <span class="string">" 姓名： "</span> &lt;&lt; s.m_Name &lt;&lt; <span class="string">" 密码："</span> &lt;&lt; s.m_Pwd &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看账号</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Manager::showPerson</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请选择查看内容："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"1、查看所有学生"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"2、查看所有老师"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> select = <span class="number">0</span>; <span class="comment">//接受用户选择</span></span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; select;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (select == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//查看学生</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"所有学生信息如下："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		for_each(vStu.<span class="built_in">begin</span>(), vStu.<span class="built_in">end</span>(), printStudent);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//查看老师</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"所有老师信息如下："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		for_each(vTea.<span class="built_in">begin</span>(), vTea.<span class="built_in">end</span>(), printTeacher);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看机房信息</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Manager::showComputer</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"机房信息如下："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">vector</span>&lt;ComputerRoom&gt;::iterator it = vCom.<span class="built_in">begin</span>(); it != vCom.<span class="built_in">end</span>();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"机房编号： "</span> &lt;&lt; it-&gt;m_ComId &lt;&lt; <span class="string">" 机房最大容量： "</span> &lt;&lt; it-&gt;m_MaxNum &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空预约记录</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Manager::cleanFile</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">ofstream <span class="title">ofs</span><span class="params">(ORDER_FILE, ios::trunc)</span></span>;</span><br><span class="line">	ofs.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"清空成功！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化容器</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Manager::initVector</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//确保容器清空状态</span></span><br><span class="line">	vStu.<span class="built_in">clear</span>();</span><br><span class="line">	vTea.<span class="built_in">clear</span>();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//读取信息   学生</span></span><br><span class="line">	ifstream ifs;</span><br><span class="line">	ifs.<span class="built_in">open</span>(STUDENT_FILE, ios::in);</span><br><span class="line">	<span class="keyword">if</span> (!ifs.is_open())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"文件读取失败"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Student s;</span><br><span class="line">	<span class="keyword">while</span> (ifs &gt;&gt; s.m_Id &amp;&amp; ifs &gt;&gt; s.m_Name &amp;&amp; ifs &gt;&gt; s.m_Pwd)</span><br><span class="line">	&#123;</span><br><span class="line">		vStu.push_back(s);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//	cout &lt;&lt; "当前学生数量为： " &lt;&lt; vStu.size() &lt;&lt; endl;</span></span><br><span class="line">	ifs.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//读取信息   老师</span></span><br><span class="line">	ifs.<span class="built_in">open</span>(TEACHER_FILE, ios::in);</span><br><span class="line">	Teacher t;</span><br><span class="line">	<span class="keyword">while</span> (ifs &gt;&gt; t.m_EmpId &amp;&amp; ifs &gt;&gt; t.m_Name &amp;&amp; ifs &gt;&gt;t.m_Pwd)</span><br><span class="line">	&#123;</span><br><span class="line">		vTea.push_back(t);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//	cout &lt;&lt; "当前老师数量为： " &lt;&lt; vTea.size() &lt;&lt; endl;</span></span><br><span class="line">	ifs.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//检测重复 参数1 检测学号/职工号  参数2  检测类型</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Manager::checkRepeat</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> type)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (type == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//检测学生</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="built_in">vector</span>&lt;Student&gt;::iterator it = vStu.<span class="built_in">begin</span>(); it != vStu.<span class="built_in">end</span>(); it++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (id == it-&gt;m_Id)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//检测老师</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="built_in">vector</span>&lt;Teacher&gt;::iterator it = vTea.<span class="built_in">begin</span>(); it != vTea.<span class="built_in">end</span>(); it++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (id == it-&gt;m_EmpId)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.orderFile.cpp</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"orderFile.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//构造函数</span></span><br><span class="line">OrderFile::OrderFile()</span><br><span class="line">&#123;</span><br><span class="line">	ifstream ifs;</span><br><span class="line">	ifs.<span class="built_in">open</span>(ORDER_FILE, ios::in);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">string</span> date;    <span class="comment">// 日期</span></span><br><span class="line">	<span class="built_in">string</span> interval;<span class="comment">//时间段</span></span><br><span class="line">	<span class="built_in">string</span> stuId;   <span class="comment">//学生编号</span></span><br><span class="line">	<span class="built_in">string</span> stuName; <span class="comment">//学生姓名</span></span><br><span class="line">	<span class="built_in">string</span> roomId;  <span class="comment">//机房编号</span></span><br><span class="line">	<span class="built_in">string</span> status;  <span class="comment">//预约状态</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Size = <span class="number">0</span>; <span class="comment">//记录条数</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (ifs &gt;&gt; date &amp;&amp; ifs &gt;&gt; interval &amp;&amp; ifs </span><br><span class="line">		&gt;&gt; stuId &amp;&amp; ifs &gt;&gt; stuName &amp;&amp; ifs &gt;&gt; roomId &amp;&amp; ifs &gt;&gt; status)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//cout &lt;&lt; date &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//cout &lt;&lt; interval &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//cout &lt;&lt; stuId &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//cout &lt;&lt; stuName &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//cout &lt;&lt; roomId &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//cout &lt;&lt; status &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//cout &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="comment">//date:11111</span></span><br><span class="line">		<span class="built_in">string</span> key;</span><br><span class="line">		<span class="built_in">string</span> value;</span><br><span class="line">		<span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;m;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> pos = date.<span class="built_in">find</span>(<span class="string">":"</span>); <span class="comment">// 4</span></span><br><span class="line">		<span class="keyword">if</span> (pos != <span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			key = date.substr(<span class="number">0</span>, pos);</span><br><span class="line">			value = date.substr(pos + <span class="number">1</span>, date.<span class="built_in">size</span>() - pos - <span class="number">1</span>);  <span class="comment">// size = 10  pos = 4  size - pos  - 1 = 6 - 1</span></span><br><span class="line">		</span><br><span class="line">			m.insert(make_pair(key, value));</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">		<span class="comment">//cout &lt;&lt; "key = " &lt;&lt; key &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//cout &lt;&lt; "value = " &lt;&lt; value &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//截取时间段</span></span><br><span class="line">		pos = interval.<span class="built_in">find</span>(<span class="string">":"</span>); <span class="comment">// 4</span></span><br><span class="line">		<span class="keyword">if</span> (pos != <span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			key = interval.substr(<span class="number">0</span>, pos);</span><br><span class="line">			value = interval.substr(pos + <span class="number">1</span>, interval.<span class="built_in">size</span>() - pos - <span class="number">1</span>);  <span class="comment">// size = 10  pos = 4  size - pos  - 1 = 6 - 1</span></span><br><span class="line">			m.insert(make_pair(key, value));</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//截取学号</span></span><br><span class="line">		pos = stuId.<span class="built_in">find</span>(<span class="string">":"</span>); <span class="comment">// 4</span></span><br><span class="line">		<span class="keyword">if</span> (pos != <span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			key = stuId.substr(<span class="number">0</span>, pos);</span><br><span class="line">			value = stuId.substr(pos + <span class="number">1</span>, stuId.<span class="built_in">size</span>() - pos - <span class="number">1</span>);  <span class="comment">// size = 10  pos = 4  size - pos  - 1 = 6 - 1</span></span><br><span class="line">			m.insert(make_pair(key, value));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//截取姓名</span></span><br><span class="line">		pos = stuName.<span class="built_in">find</span>(<span class="string">":"</span>); <span class="comment">// 4</span></span><br><span class="line">		<span class="keyword">if</span> (pos != <span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			key = stuName.substr(<span class="number">0</span>, pos);</span><br><span class="line">			value = stuName.substr(pos + <span class="number">1</span>, stuName.<span class="built_in">size</span>() - pos - <span class="number">1</span>);  <span class="comment">// size = 10  pos = 4  size - pos  - 1 = 6 - 1</span></span><br><span class="line">			m.insert(make_pair(key, value));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//截取机房号</span></span><br><span class="line">		pos = roomId.<span class="built_in">find</span>(<span class="string">":"</span>); <span class="comment">// 4</span></span><br><span class="line">		<span class="keyword">if</span> (pos != <span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			key = roomId.substr(<span class="number">0</span>, pos);</span><br><span class="line">			value = roomId.substr(pos + <span class="number">1</span>, roomId.<span class="built_in">size</span>() - pos - <span class="number">1</span>);  <span class="comment">// size = 10  pos = 4  size - pos  - 1 = 6 - 1</span></span><br><span class="line">			m.insert(make_pair(key, value));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//截取预约状态</span></span><br><span class="line">		pos = status.<span class="built_in">find</span>(<span class="string">":"</span>); <span class="comment">// 4</span></span><br><span class="line">		<span class="keyword">if</span> (pos != <span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			key = status.substr(<span class="number">0</span>, pos);</span><br><span class="line">			value = status.substr(pos + <span class="number">1</span>, status.<span class="built_in">size</span>() - pos - <span class="number">1</span>);  <span class="comment">// size = 10  pos = 4  size - pos  - 1 = 6 - 1</span></span><br><span class="line">			m.insert(make_pair(key, value));</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//将小map容器放入到大的map容器中</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;m_orderData.insert(make_pair(<span class="keyword">this</span>-&gt;m_Size, m));</span><br><span class="line">		<span class="keyword">this</span>-&gt;m_Size++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ifs.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//测试最大map容器</span></span><br><span class="line">	<span class="comment">//for (map&lt;int, map&lt;string, string&gt;&gt;::iterator it = m_orderData.begin(); it != m_orderData.end(); it++)</span></span><br><span class="line">	<span class="comment">//&#123;</span></span><br><span class="line">	<span class="comment">//	cout &lt;&lt; "条数为： " &lt;&lt; it-&gt;first &lt;&lt; " value = " &lt;&lt; endl;</span></span><br><span class="line">	<span class="comment">//	for (map&lt;string, string&gt;::iterator mit = (*it).second.begin(); mit != it-&gt;second.end(); mit++)</span></span><br><span class="line">	<span class="comment">//	&#123;</span></span><br><span class="line">	<span class="comment">//		cout &lt;&lt; " key = " &lt;&lt; mit-&gt;first &lt;&lt; " value = " &lt;&lt; mit-&gt;second &lt;&lt; " ";</span></span><br><span class="line">	<span class="comment">//	&#125;</span></span><br><span class="line">	<span class="comment">//	cout &lt;&lt; endl;</span></span><br><span class="line">	<span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//更新预约记录</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OrderFile::updateOrder</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;m_Size == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span>; <span class="comment">//预约记录0条，直接return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function">ofstream <span class="title">ofs</span><span class="params">(ORDER_FILE, ios::out | ios::trunc)</span></span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;m_Size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ofs &lt;&lt; <span class="string">"date:"</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_orderData[i][<span class="string">"date"</span>] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">"interval:"</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_orderData[i][<span class="string">"interval"</span>] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">"stuId:"</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_orderData[i][<span class="string">"stuId"</span>] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">"stuName:"</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_orderData[i][<span class="string">"stuName"</span>] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">"roomId:"</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_orderData[i][<span class="string">"roomId"</span>] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">"status:"</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_orderData[i][<span class="string">"status"</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ofs.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.student.cpp</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"student.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//默认构造</span></span><br><span class="line">Student::Student()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//有参构造  参数：学号、姓名、密码</span></span><br><span class="line">Student::Student(<span class="keyword">int</span> id, <span class="built_in">string</span> name, <span class="built_in">string</span> pwd)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//初始化属性</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Id = id;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Name = name;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Pwd = pwd;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//初始化机房信息</span></span><br><span class="line">	ifstream ifs;</span><br><span class="line">	ifs.<span class="built_in">open</span>(COMPUTER_FILE, ios::in);</span><br><span class="line">	</span><br><span class="line">	ComputerRoom com;</span><br><span class="line">	<span class="keyword">while</span> ( ifs &gt;&gt; com.m_ComId &amp;&amp; ifs &gt;&gt; com.m_MaxNum)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//将读取的信息放入到 容器中</span></span><br><span class="line">		vCom.push_back(com);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ifs.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//菜单界面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::operMenu</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"欢迎学生代表："</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Name &lt;&lt; <span class="string">"登录！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t ----------------------------------\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          1.申请预约              |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          2.查看我的预约          |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          3.查看所有预约          |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          4.取消预约              |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          0.注销登录              |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t ----------------------------------\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请选择您的操作： "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//申请预约</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::applyOrder</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"机房开放时间为周一至周五!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入申请预约的时间："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"1、周一"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"2、周二"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"3、周三"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"4、周四"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"5、周五"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> date = <span class="number">0</span>;   <span class="comment">//日期</span></span><br><span class="line">	<span class="keyword">int</span> interval = <span class="number">0</span>; <span class="comment">//时间段</span></span><br><span class="line">	<span class="keyword">int</span> room = <span class="number">0</span>; <span class="comment">//机房编号</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; date;</span><br><span class="line">		<span class="keyword">if</span> (date &gt;= <span class="number">1</span> &amp;&amp; date &lt;= <span class="number">5</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有误，请重新输入"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入申请预约时间段："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"1、上午"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"2、下午"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; interval;</span><br><span class="line">		<span class="keyword">if</span> (interval &gt;= <span class="number">1</span> &amp;&amp; interval &lt;= <span class="number">2</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有误，请重新输入"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请选择机房："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; vCom.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; vCom[i].m_ComId &lt;&lt; <span class="string">"号机房容量为： "</span> &lt;&lt; vCom[i].m_MaxNum &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; room;</span><br><span class="line">		<span class="keyword">if</span> (room &gt;= <span class="number">1</span> &amp;&amp; room &lt;= <span class="number">3</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有误，请重新输入"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"预约成功！审核中"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	ofstream ofs;</span><br><span class="line">	ofs.<span class="built_in">open</span>(ORDER_FILE, ios::app);</span><br><span class="line"></span><br><span class="line">	ofs &lt;&lt; <span class="string">"date:"</span> &lt;&lt; date &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	ofs &lt;&lt; <span class="string">"interval:"</span> &lt;&lt; interval &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	ofs &lt;&lt; <span class="string">"stuId:"</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Id &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	ofs &lt;&lt; <span class="string">"stuName:"</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Name &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	ofs &lt;&lt; <span class="string">"roomId:"</span> &lt;&lt; room &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	ofs &lt;&lt; <span class="string">"status:"</span> &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	ofs.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//查看自身预约</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::showMyOrder</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	OrderFile of;</span><br><span class="line">	<span class="keyword">if</span> (of.m_Size == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"无预约记录！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		system(<span class="string">"pause"</span>);</span><br><span class="line">		system(<span class="string">"cls"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; of.m_Size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// string  转 int</span></span><br><span class="line">		<span class="comment">// string 利用 .c_str() 转 const char *</span></span><br><span class="line">		<span class="comment">//利用 atoi ( const char *) 转 int</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;m_Id == atoi(of.m_orderData[i][<span class="string">"stuId"</span>].c_str())) <span class="comment">//找到自身预约</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"预约日期： 周"</span> &lt;&lt; of.m_orderData[i][<span class="string">"date"</span>];</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">" 时间段： "</span> &lt;&lt; (of.m_orderData[i][<span class="string">"interval"</span>] == <span class="string">"1"</span> ? <span class="string">"上午"</span> : <span class="string">"下午"</span>);</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">" 机房号： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"roomId"</span>];</span><br><span class="line">			<span class="built_in">string</span> status = <span class="string">"状态： "</span>;</span><br><span class="line">			<span class="comment">// 1 审核中  2 已预约  -1 预约失败  0 取消预约</span></span><br><span class="line">			<span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"1"</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				status += <span class="string">"审核中"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"2"</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				status += <span class="string">"预约成功"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"-1"</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				status += <span class="string">"预约失败，审核未通过"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				status += <span class="string">"预约已取消"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; status &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看所有预约</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::showAllOrder</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	OrderFile of;</span><br><span class="line">	<span class="keyword">if</span> (of.m_Size == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"无预约记录"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		system(<span class="string">"pasue"</span>);</span><br><span class="line">		system(<span class="string">"cls"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; of.m_Size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">"、 "</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"预约日期： 周"</span> &lt;&lt; of.m_orderData[i][<span class="string">"date"</span>];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">" 时间段： "</span> &lt;&lt; (of.m_orderData[i][<span class="string">"interval"</span>] == <span class="string">"1"</span> ? <span class="string">"上午"</span> : <span class="string">"下午"</span>);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">" 学号： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"stuId"</span>];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">" 姓名： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"stuName"</span>];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">" 机房编号： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"roomId"</span>];</span><br><span class="line">		<span class="built_in">string</span> status = <span class="string">" 状态："</span>;</span><br><span class="line">		<span class="comment">// 1 审核中 2 已预约  -1预约失败  0 取消预约</span></span><br><span class="line">		<span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"1"</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			status += <span class="string">"审核中"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"2"</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			status += <span class="string">"预约成功"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"-1"</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			status += <span class="string">"预约失败，审核未通过"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			status += <span class="string">"预约已取消"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; status &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//取消预约</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::cancelOrder</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	OrderFile of;</span><br><span class="line">	<span class="keyword">if</span> (of.m_Size == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"无预约记录"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		system(<span class="string">"pause"</span>);</span><br><span class="line">		system(<span class="string">"cls"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"审核中或预约成功的记录可以取消，请输入取消的记录"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;v; <span class="comment">//存放在最大容器中的下标编号</span></span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; of.m_Size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//先判断是自身学号</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;m_Id == atoi(of.m_orderData[i][<span class="string">"stuId"</span>].c_str()))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//再筛选状态  审核中或预约成功</span></span><br><span class="line">			<span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"1"</span> || of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"2"</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				v.push_back(i);</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; index++ &lt;&lt; <span class="string">"、 "</span>;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"预约日期： 周"</span> &lt;&lt; of.m_orderData[i][<span class="string">"date"</span>];</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">" 时间段： "</span> &lt;&lt; (of.m_orderData[i][<span class="string">"interval"</span>] == <span class="string">"1"</span> ? <span class="string">"上午"</span> : <span class="string">"下午"</span>);</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">" 机房编号： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"roomId"</span>];</span><br><span class="line">				<span class="built_in">string</span> status = <span class="string">" 状态： "</span>;</span><br><span class="line">				<span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"1"</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					status += <span class="string">"审核中"</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"2"</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					status += <span class="string">"预约成功"</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; status &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入取消的记录，0代表返回"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> select = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; select;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (select &gt;= <span class="number">0</span> &amp;&amp; select &lt;= v.<span class="built_in">size</span>())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (select == <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				of.m_orderData[v[select - <span class="number">1</span>]][<span class="string">"status"</span>] = <span class="string">"0"</span>;</span><br><span class="line"></span><br><span class="line">				of.updateOrder();</span><br><span class="line"></span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"已取消预约"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有误，请重新输入"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.teacher.cpp</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"teacher.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//默认构造</span></span><br><span class="line">Teacher::Teacher()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//有参构造</span></span><br><span class="line">Teacher::Teacher(<span class="keyword">int</span> empId, <span class="built_in">string</span> name, <span class="built_in">string</span> pwd)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//初始化属性</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;m_EmpId = empId;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Name = name;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Pwd = pwd;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//菜单界面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Teacher::operMenu</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"欢迎教师："</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Name &lt;&lt; <span class="string">"登录！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t ----------------------------------\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          1.查看所有预约          |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          2.审核预约              |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          0.注销登录              |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                                  |\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t ----------------------------------\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请选择您的操作： "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//查看所有预约</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Teacher::showAllOrder</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	OrderFile of;</span><br><span class="line">	<span class="keyword">if</span> (of.m_Size == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"无预约记录"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		system(<span class="string">"pause"</span>);</span><br><span class="line">		system(<span class="string">"cls"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; of.m_Size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">"、 "</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"预约日期： 周"</span> &lt;&lt; of.m_orderData[i][<span class="string">"date"</span>];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">" 时间段： "</span> &lt;&lt; (of.m_orderData[i][<span class="string">"interval"</span>] == <span class="string">"1"</span> ? <span class="string">"上午"</span> : <span class="string">"下午"</span>);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">" 学号： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"stuId"</span>];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">" 姓名： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"stuName"</span>];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">" 机房编号： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"roomId"</span>];</span><br><span class="line">		<span class="built_in">string</span> status = <span class="string">" 状态： "</span>;</span><br><span class="line">		<span class="comment">//1 审核中 2 已预约 -1 预约失败  0 取消预约</span></span><br><span class="line">		<span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"1"</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			status += <span class="string">"审核中"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"2"</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			status += <span class="string">"预约成功"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"-1"</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			status += <span class="string">"预约失败，审核未通过"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			status += <span class="string">"预约已取消"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; status &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//审核预约</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Teacher::validOrder</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	OrderFile of;</span><br><span class="line">	<span class="keyword">if</span> (of.m_Size == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"无预约记录"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		system(<span class="string">"pause"</span>);</span><br><span class="line">		system(<span class="string">"cls"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;v;</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"待审核的预约记录如下："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; of.m_Size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (of.m_orderData[i][<span class="string">"status"</span>] == <span class="string">"1"</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			v.push_back(i); </span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; ++index &lt;&lt; <span class="string">"、 "</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"预约日期： 周"</span> &lt;&lt; of.m_orderData[i][<span class="string">"date"</span>];</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">" 时间段： "</span> &lt;&lt; (of.m_orderData[i][<span class="string">"interval"</span>] == <span class="string">"1"</span> ? <span class="string">"上午"</span> : <span class="string">"下午"</span>);</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">" 学生编号： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"stuId"</span>];</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">" 学生姓名： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"stuName"</span>];</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">" 机房编号： "</span> &lt;&lt; of.m_orderData[i][<span class="string">"roomId"</span>];</span><br><span class="line">			<span class="built_in">string</span> status = <span class="string">" 状态：审核中 "</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; status &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入审核的预约记录，0代表返回"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> select = <span class="number">0</span>; <span class="comment">//接受用户选择的预约记录</span></span><br><span class="line">	<span class="keyword">int</span> ret = <span class="number">0</span>;  <span class="comment">//接受预约结果记录</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; select;</span><br><span class="line">		<span class="keyword">if</span> (select &gt;= <span class="number">0</span> &amp;&amp; select &lt;= v.<span class="built_in">size</span>())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (select == <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入审核结果"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"1、通过"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"2、不通过"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="built_in">cin</span> &gt;&gt; ret;</span><br><span class="line">				<span class="keyword">if</span> (ret == <span class="number">1</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="comment">//通过情况</span></span><br><span class="line">					of.m_orderData[v[select - <span class="number">1</span>]][<span class="string">"status"</span>] = <span class="string">"2"</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">				&#123;</span><br><span class="line">					<span class="comment">//不通过情况</span></span><br><span class="line">					of.m_orderData[v[select - <span class="number">1</span>]][<span class="string">"status"</span>] = <span class="string">"-1"</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				of.updateOrder(); <span class="comment">// 更新预约记录</span></span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"审核完毕"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有误，请重新输入！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>5.机房预约系统.cpp</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Identity.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"globalFile.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"student.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"teacher.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"manager.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//进入学生子菜单界面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">studentMenu</span><span class="params">(Identity* &amp;student)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//调用学生子菜单</span></span><br><span class="line">		student-&gt;operMenu();</span><br><span class="line"></span><br><span class="line">		Student * stu = (Student *)student;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> select = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; select; <span class="comment">//接受用户选择</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (select == <span class="number">1</span>) <span class="comment">//申请预约</span></span><br><span class="line">		&#123;</span><br><span class="line">			stu-&gt;applyOrder();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (select == <span class="number">2</span>) <span class="comment">//查看自身预约</span></span><br><span class="line">		&#123;</span><br><span class="line">			stu-&gt;showMyOrder();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (select == <span class="number">3</span>) <span class="comment">//查看所有人预约</span></span><br><span class="line">		&#123;</span><br><span class="line">			stu-&gt;showAllOrder();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (select == <span class="number">4</span>) <span class="comment">//取消预约</span></span><br><span class="line">		&#123;</span><br><span class="line">			stu-&gt;cancelOrder();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//注销登录</span></span><br><span class="line">			<span class="keyword">delete</span> student;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"注销成功"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			system(<span class="string">"pause"</span>);</span><br><span class="line">			system(<span class="string">"cls"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进入教师子菜单界面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">teacherMenu</span><span class="params">(Identity * &amp;teacher)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//调用子菜单界面</span></span><br><span class="line">		teacher-&gt;operMenu();</span><br><span class="line"></span><br><span class="line">		Teacher * tea = (Teacher*)teacher;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> select = <span class="number">0</span>; <span class="comment">//接受用户选择</span></span><br><span class="line"></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; select;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (select == <span class="number">1</span>) <span class="comment">//查看所有预约</span></span><br><span class="line">		&#123;</span><br><span class="line">			tea-&gt;showAllOrder();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (select == <span class="number">2</span>) <span class="comment">//审核预约</span></span><br><span class="line">		&#123;</span><br><span class="line">			tea-&gt;validOrder();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">delete</span> teacher;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"注销成功"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			system(<span class="string">"pause"</span>);</span><br><span class="line">			system(<span class="string">"cls"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进入管理员子菜单界面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">managerMenu</span><span class="params">(Identity * &amp;manager)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//调用管理员子菜单</span></span><br><span class="line">		manager-&gt;operMenu();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//将父类指针 转为子类指针，调用子类里其他接口</span></span><br><span class="line">		Manager * man = (Manager*)manager;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> select = <span class="number">0</span>;</span><br><span class="line">		<span class="comment">//接受用户选项</span></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; select;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (select == <span class="number">1</span>) <span class="comment">//添加账号</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//cout &lt;&lt; "添加账号" &lt;&lt; endl;</span></span><br><span class="line">			man-&gt;addPerson();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (select == <span class="number">2</span>) <span class="comment">//查看账号</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//cout &lt;&lt; "查看账号" &lt;&lt; endl;</span></span><br><span class="line">			man-&gt;showPerson();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (select == <span class="number">3</span>) <span class="comment">//查看机房</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//cout &lt;&lt; "查看机房" &lt;&lt; endl;</span></span><br><span class="line">			man-&gt;showComputer();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (select == <span class="number">4</span>) <span class="comment">//清空预约</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//cout &lt;&lt; "清空预约" &lt;&lt; endl;</span></span><br><span class="line">			man-&gt;cleanFile();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//注销</span></span><br><span class="line">			<span class="keyword">delete</span> manager; <span class="comment">//销毁掉堆区对象</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"注销成功"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			system(<span class="string">"pause"</span>);</span><br><span class="line">			system(<span class="string">"cls"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//登录功能   参数1：操作文件名   参数2：操作身份类型</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LoginIn</span><span class="params">(<span class="built_in">string</span> fileName, <span class="keyword">int</span> type)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//父类指针 ，用于指向子类对象</span></span><br><span class="line">	Identity * person = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//读文件</span></span><br><span class="line">	ifstream ifs;</span><br><span class="line">	ifs.<span class="built_in">open</span>(fileName, ios::in);<span class="comment">//打开文件名为filename的文件用于其他变量的输入（也就是从文件中读取数据到其他变量）</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//判断文件是否存在</span></span><br><span class="line">	<span class="keyword">if</span> (!ifs.is_open())<span class="comment">//is_open就是用来判断文件是否成功打开，打开了返回1</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"文件不存在"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		ifs.<span class="built_in">close</span>();</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//准备接受用户的信息</span></span><br><span class="line">	<span class="keyword">int</span> id = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">string</span> name;</span><br><span class="line">	<span class="built_in">string</span> pwd;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//判断身份</span></span><br><span class="line">	<span class="keyword">if</span> (type == <span class="number">1</span>) <span class="comment">//学生身份</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入你的学号："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (type == <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入您的职工号： "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入用户名："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入密码："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; pwd;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (type == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//学生身份验证</span></span><br><span class="line">		<span class="keyword">int</span> fId; <span class="comment">//从文件中读取的id号</span></span><br><span class="line">		<span class="built_in">string</span> fName; <span class="comment">//从文件中获取的姓名</span></span><br><span class="line">		<span class="built_in">string</span> fPwd; <span class="comment">//从文件中获取密码</span></span><br><span class="line">		<span class="keyword">while</span> (ifs &gt;&gt; fId &amp;&amp; ifs &gt;&gt; fName &amp;&amp; ifs &gt;&gt; fPwd )<span class="comment">//（ifs.open(fileName, ios::in);），文本文件“filename”作为输入源</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//与用户输入的信息做对比</span></span><br><span class="line">			<span class="keyword">if</span> (fId == id &amp;&amp; fName == name &amp;&amp; fPwd == pwd)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"学生验证登录成功！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				system(<span class="string">"pause"</span>);</span><br><span class="line">				system(<span class="string">"cls"</span>);</span><br><span class="line">				person = <span class="keyword">new</span> Student(id, name, pwd);<span class="comment">//</span></span><br><span class="line">				<span class="comment">//进入学生身份的子菜单</span></span><br><span class="line">				studentMenu(person);</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (type == <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//教师身份验证</span></span><br><span class="line">		<span class="keyword">int</span> fId; <span class="comment">//从文件中获取的id号</span></span><br><span class="line">		<span class="built_in">string</span> fName; <span class="comment">//从文件中获取的姓名</span></span><br><span class="line">		<span class="built_in">string</span> fPwd; <span class="comment">//从文件中获取的密码</span></span><br><span class="line">		<span class="keyword">while</span> (ifs &gt;&gt; fId &amp;&amp; ifs &gt;&gt; fName &amp;&amp; ifs &gt;&gt; fPwd)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (fId == id &amp;&amp; fName == name &amp;&amp; fPwd == pwd)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"教师验证登录成功！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				system(<span class="string">"pause"</span>);</span><br><span class="line">				system(<span class="string">"cls"</span>);</span><br><span class="line">				person = <span class="keyword">new</span> Teacher(id, name, pwd);</span><br><span class="line">				<span class="comment">//进入教师子菜单</span></span><br><span class="line">				teacherMenu(person);</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (type == <span class="number">3</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//管理员身份验证</span></span><br><span class="line">		<span class="built_in">string</span> fName; <span class="comment">//从文件中获取姓名</span></span><br><span class="line">		<span class="built_in">string</span> fPwd; <span class="comment">//从文件中获取密码</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (ifs &gt;&gt; fName &amp;&amp; ifs &gt;&gt; fPwd)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (name == fName &amp;&amp; pwd == fPwd)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"管理员验证登录成功!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				system(<span class="string">"pause"</span>);</span><br><span class="line">				system(<span class="string">"cls"</span>);</span><br><span class="line"></span><br><span class="line">				person = <span class="keyword">new</span> Manager(name, pwd);</span><br><span class="line"></span><br><span class="line">				<span class="comment">//进入管理员子菜单界面</span></span><br><span class="line">				managerMenu(person);</span><br><span class="line"></span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"验证登录失败！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> select = <span class="number">0</span>; <span class="comment">//用于接受用户的选择</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"======================  欢迎来到电子与信息工程学院机房预约系统  ====================="</span></span><br><span class="line">			&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"请输入您的身份"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t -------------------------------\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                               |\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          1.学生代表           |\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                               |\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          2.老    师           |\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                               |\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          3.管 理 员           |\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                               |\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|          0.退    出           |\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t|                               |\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t -------------------------------\n"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入您的选择: "</span>;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; select; <span class="comment">//接受用户选择</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">switch</span> (select) <span class="comment">//根据用户选择 实现不同接口</span></span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>: <span class="comment">//学生身份</span></span><br><span class="line">			LoginIn(STUDENT_FILE, <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>: <span class="comment">//老师身份</span></span><br><span class="line">			LoginIn(TEACHER_FILE, <span class="number">2</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:  <span class="comment">//管理员身份</span></span><br><span class="line">			LoginIn(ADMIN_FILE, <span class="number">3</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span> :  <span class="comment">//退出系统</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"欢迎下一次使用！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			system(<span class="string">"pause"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有误，请重新选择！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			system(<span class="string">"pause"</span>);</span><br><span class="line">			system(<span class="string">"cls"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、运行截图"><a href="#三、运行截图" class="headerlink" title="三、运行截图"></a>三、运行截图</h1><p>管理员登入</p>
+<p><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210120215756077.png" alt="image-20210120215756077"></p>
+<p>查看学生账号</p>
+<p><img src="C:%5CUsers%5C10240%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210120220804655.png" alt="image-20210120220804655"></p>
+<p>添加学生账号</p>
+<p><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210120221041616.png" alt="image-20210120221041616"></p>
+<p>重新查看账号</p>
+<p><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210120221057187.png" alt="image-20210120221057187"></p>
+<p>登录学生账号</p>
+<p><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210120221153231.png" alt="image-20210120221153231"></p>
+<p>申请预约</p>
+<p><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210120221241951.png" alt="image-20210120221241951"></p>
+<p>登录教师账号</p>
+<p><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210120221537232.png" alt="image-20210120221537232"></p>
+<p>教师审核</p>
+<p><img src="http://tetedetian.oss-cn-shenzhen.aliyuncs.com/img/image-20210120221613690.png" alt="image-20210120221613690"></p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://tetedetian.github.io/2021/01/16/%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%B1%95%E7%A4%BA/>https://tetedetian.github.io/2021/01/16/%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%B1%95%E7%A4%BA/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-22T23:16:17+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 22, 2021</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/c/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>c++</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://tetedetian.github.io/2021/01/16/%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%B1%95%E7%A4%BA/&title=机房预约系统模拟展示 - 特特的天&summary= 此博客展示了一个基于C++控制台的机房预约模拟系统的代码以及运行结果 "
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tetedetian.github.io/2021/01/16/%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%B1%95%E7%A4%BA/&title=机房预约系统模拟展示 - 特特的天&summary= 此博客展示了一个基于C++控制台的机房预约模拟系统的代码以及运行结果 "
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://tetedetian.github.io/2021/01/16/%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%B1%95%E7%A4%BA/&title=机房预约系统模拟展示 - 特特的天&summary= 此博客展示了一个基于C++控制台的机房预约模拟系统的代码以及运行结果 "
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2021/01/21/%E6%A8%A1%E6%8B%9F%E7%A9%BA%E8%B0%83%E9%81%A5%E6%8E%A7%E5%99%A8%E4%BB%A3%E7%A0%81/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>模拟空调遥控器代码</p>
+                <p class='content'>基于C51单片机的模拟空调遥控器代码
+
+
+
+
+
+
+
+12345678910111213141516171819202122232425262728293031323334353637383940...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/10/23/%E5%A6%82%E4%BD%95%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0github/'>
+                <p class='title'>如何将本地项目上传到github<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>从建立github仓库开始，介绍如何把本地项目上传到github仓库
+
+
+
+
+步骤概览
+建立github仓库
+
+1.建立github仓库
+
+
+2.建立github仓库与本地的连接（1）在需要上传...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、头文件"><span class="toc-text">一、头文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、源文件"><span class="toc-text">二、源文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、运行截图"><span class="toc-text">三、运行截图</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='5131789159'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xaoxuu.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/xaoxuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        Use
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        as theme, total visits
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/35F12181-F0E9-45BD-B134-37E4B4A660CF.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+<!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    var valinePath = $.trim($('#valine-path').text()) === "none" ?
+            window.location.pathname : $.trim($('#valine-path').text());
+
+    var valinePlaceholder = $.trim($('#valine-placeholder').text()) === "none" ?
+            "快来评论吧~" : $.trim($('#valine-placeholder').text());
+
+    var ALLPATH = '';
+    if(ALLPATH != '') valinePath = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: valinePlaceholder,
+      path: valinePath,
+      appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+      appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '32px',
+        duration: '800',
+        interval: '20',
+        scale: '1',
+        easing: 'ease-out'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+      var currentUrl = window.location.pathname;
+      var targetUrl = e.triggerElement.href;
+      var banUrl = [""];
+      if (banUrl[0] != "") {
+        banUrl.forEach(item => {
+          if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+            window.location.href = targetUrl;
+          }
+        });
+      }
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
+      $('.menu-phone.list-v').css("display","none"); // 移除小尾巴
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      $('.s-top').unbind('click');   // 解绑
+      $('.menu a').unbind('click');  // 解绑
+      $(window).unbind('resize');    // 解绑
+      $(window).unbind('scroll');    // 解绑
+      $(document).unbind('scroll');  // 解绑
+      $(document).unbind('click');   // 解绑
+      $('body').unbind('click');     // 解绑
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('') {
+            $('').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
